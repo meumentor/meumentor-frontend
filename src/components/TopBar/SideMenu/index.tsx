@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import useWindowSize from "@/lib/hooks/useWindowSize";
 import { SetState } from "@/lib/types";
 import styled from "@emotion/styled";
 import Link from "next/link";
@@ -8,7 +9,6 @@ import { FaX } from "react-icons/fa6";
 interface ISideMenu {
   isOpen: boolean;
   setIsOpen: SetState<boolean>;
-  width: number;
 }
 
 export const Container = styled.div<{ $active?: boolean }>`
@@ -71,15 +71,17 @@ const ContainerClose = styled.div`
 `;
 
 export default function SideMenu(props: ISideMenu) {
-  const { isOpen, setIsOpen, width } = props;
+  const { isOpen, setIsOpen } = props;
+  const { width } = useWindowSize()
 
   const close = () => {
     setIsOpen(false)
     document.body.style.overflow = ''
   }
+
   useEffect(() => {
-    if (width > 950 && isOpen) close();
-  }, [width]);
+    if ((width ?? 0) >= 950) close()
+  }, [width])
 
   return (
     <>

@@ -3,12 +3,9 @@ import Logo from "../Logo";
 import { BoxMenu, Menu } from "./styles";
 import SideMenu from "./SideMenu";
 import { useState } from "react";
-import useWindowDimensions from "@/lib/hooks/useWindowDimensions";
 
 export default function TopBar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { width } = useWindowDimensions()
-
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <BoxMenu>
       <Logo />
@@ -22,7 +19,7 @@ export default function TopBar() {
         >
           <RxHamburgerMenu className="icon-menu" size="1.8em" />
         </button>
-        <SideMenu {...{ isOpen, setIsOpen, width }} />
+        <SideMenu {...{ isOpen, setIsOpen }} />
       </Menu>
     </BoxMenu>
   );

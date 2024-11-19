@@ -1,3 +1,4 @@
+"use client";
 import { container } from "@/lib/shared/styles";
 import styled from "@emotion/styled";
 
