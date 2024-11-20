@@ -25,7 +25,7 @@ export const Container = styled.div<{ $active?: boolean }>`
     top: 0;
     width: 300px;
     transform: ${(attr) => `translateX(${attr?.$active ? 0 : -100}%)`};
-    /* visibility: ${(attr) => attr?.$active ? 'visible' : 'hidden'}; */
+    /* visibility: ${(attr) => (attr?.$active ? "visible" : "hidden")}; */
     max-width: 90%;
     height: 100dvh;
     background-color: #fff;
@@ -72,16 +72,16 @@ const ContainerClose = styled.div`
 
 export default function SideMenu(props: ISideMenu) {
   const { isOpen, setIsOpen } = props;
-  const { width } = useWindowSize()
+  const { width } = useWindowSize();
 
   const close = () => {
-    setIsOpen(false)
-    document.body.style.overflow = ''
-  }
+    setIsOpen(false);
+    document.body.style.overflow = "";
+  };
 
   useEffect(() => {
-    if ((width ?? 0) >= 950) close()
-  }, [width])
+    if ((width ?? 0) >= 950) close();
+  }, [width]);
 
   return (
     <>
@@ -96,7 +96,15 @@ export default function SideMenu(props: ISideMenu) {
           }}
         >
           <ContainerClose>
-            <button onClick={close} style={{ background: 'transparent', border: 'none', outline: 'none', padding: '0.4em' }}>
+            <button
+              onClick={close}
+              style={{
+                background: "transparent",
+                border: "none",
+                outline: "none",
+                padding: "0.4em",
+              }}
+            >
               <FaX />
             </button>
           </ContainerClose>
@@ -119,16 +127,18 @@ export default function SideMenu(props: ISideMenu) {
             </li>
             <li>
               <Link
+                onClick={close}
                 style={{ textDecoration: "none", color: "inherit" }}
-                href="#mentores"
+                href="/#mentores"
               >
                 Mentores
               </Link>
             </li>
             <li>
               <Link
+                onClick={close}
                 style={{ textDecoration: "none", color: "inherit" }}
-                href="#contato"
+                href="/#contato"
               >
                 Contato
               </Link>
