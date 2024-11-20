@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 
 export const Section = styled.section`
   ${container}
-  min-height: calc(100dvh - 50px);
 `
 
 export const Hero = styled.div`
@@ -48,5 +47,37 @@ export const ImageContainer = styled.div`
 
   @media screen and (min-width: 1350px) {
     height: 426px;
+  }
+`
+
+export const ContentMentor = styled.div`
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 350px;
+
+  @media screen and (max-width: 850px) {
+    padding: 60px 0;
+    flex-direction: column;
+  }
+`
+export const BoxGridContact = styled.div`
+  display: grid;
+  gap: 10px;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+
+  #email, #message {
+    grid-column: auto / span 2
+  }
+
+  @media screen and (max-width: 630px) {
+    & {
+      grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    }
+
+    & > div {
+      grid-column: auto / span 2
+    }
   }
 `

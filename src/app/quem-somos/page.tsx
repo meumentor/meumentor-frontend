@@ -1,5 +1,13 @@
+"use client";
+import TopBar from "@/components/TopBar";
+
 export default function About() {
-  return (<>
-    <h2>Quem Somos</h2>
-  </>)
+  return (
+    <>
+      <TopBar />
+      <main>
+        <h2>Quem Somos</h2>
+      </main>
+    </>
+  );
 }
