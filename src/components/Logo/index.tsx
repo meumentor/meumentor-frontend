@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Image from "next/image";
 
 const Box = styled.div`
   display: flex;
@@ -8,9 +9,9 @@ const Box = styled.div`
   @media screen and (max-width: 949px) {
     & span {
       display: none;
-    } 
+    }
   }
-`
+`;
 
 export default function Logo() {
   return (
@@ -20,10 +21,13 @@ export default function Logo() {
           borderRadius: "50%",
           width: 40,
           height: 40,
-          background: "#8d8d8d",
+          position: 'relative',
+          overflow: 'hidden'
         }}
-      ></div>
-      <span style={{ width: 50 }}>Meu Mentor</span>
+      >
+        <Image fill alt="Logomarca" src="/logo.png" />
+      </div>
+      <span style={{ fontSize: '1.04em', width: 50, fontWeight: 400, color: '#d1a85c', lineHeight: '1.2' }}>MEU MENTOR</span>
     </Box>
   );
 }
