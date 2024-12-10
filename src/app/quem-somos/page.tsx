@@ -14,7 +14,7 @@ export default function About() {
               Quem Somos
             </h2>
             <p>
-              O site meumentor.net surge com o intuito de conectar grandes
+              O site <a href='https://meumentor.net'>meumentor.net</a> surge com o intuito de conectar grandes
               profissionais de mercado com as pessoas, através da mentoria.
               Somos uma HR Tech que tem o propósito de contribuir para a
               realização pessoal e profissional das pessoas. Queremos fazer
