@@ -158,6 +158,7 @@ export default function SideMenu(props: ISideMenu) {
             }}
           >
             <button
+              onClick={close}
               style={{
                 cursor: "pointer",
                 fontSize: "1em",
@@ -171,6 +172,7 @@ export default function SideMenu(props: ISideMenu) {
               Cadastre-se
             </button>
             <Link
+              onClick={close}
               href="/login"
               style={{
                 cursor: "pointer",
