@@ -112,6 +112,7 @@ export default function SideMenu(props: ISideMenu) {
           <ul className="list-menu">
             <li>
               <Link
+                onClick={close}
                 style={{ textDecoration: "none", color: "inherit" }}
                 href="/"
               >
@@ -120,6 +121,7 @@ export default function SideMenu(props: ISideMenu) {
             </li>
             <li>
               <Link
+                onClick={close}
                 style={{ textDecoration: "none", color: "inherit" }}
                 href="quem-somos"
               >
