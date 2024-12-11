@@ -28,7 +28,6 @@ export default function Home() {
               <div>
                 <button
                   style={{
-                    cursor: "pointer",
                     fontSize: "1.1em",
                     color: "#fff",
                     borderRadius: "1.5em",
@@ -340,8 +339,7 @@ export default function Home() {
                 background: "#3F92E0",
                 color: "#fff",
                 border: "none",
-                outline: "none",
-                cursor: "pointer",
+                outline: "none"
               }}
             >
               Enviar

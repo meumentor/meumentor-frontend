@@ -11,6 +11,7 @@ export const BoxMenu = styled.div`
   @media screen and (min-width: 949px) {
     .icon-menu {
       visibility: hidden;
+      display: none;
     }
   }
 

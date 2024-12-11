@@ -1,0 +1,11 @@
+:root {
+  --blue100: #3F92E0;
+  --blue200: #3e3be0;
+  --gray700: #d7d7d7;
+
+  --input-color: #000;
+  --input-outline: #307ef3;
+  --input-label-color: var(--input-color);
+  --input-label-disabled: #7f7f7f;
+  --input-label-background: #fff;
+}

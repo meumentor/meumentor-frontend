@@ -9,6 +9,7 @@ import { FaX } from "react-icons/fa6";
 interface ISideMenu {
   isOpen: boolean;
   setIsOpen: SetState<boolean>;
+  logged?: boolean;
 }
 
 export const Container = styled.div<{ $active?: boolean }>`
@@ -71,7 +72,7 @@ const ContainerClose = styled.div`
 `;
 
 export default function SideMenu(props: ISideMenu) {
-  const { isOpen, setIsOpen } = props;
+  const { isOpen, setIsOpen, logged } = props;
   const { width } = useWindowSize();
 
   const close = () => {
@@ -145,42 +146,48 @@ export default function SideMenu(props: ISideMenu) {
             </li>
           </ul>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 8,
-          }}
-        >
-          <button
+        {!logged ? (
+          <div
             style={{
-              cursor: "pointer",
-              fontSize: "1em",
-              color: "#585858",
-              padding: "0.8em 0.6em",
-              background: "none",
-              border: "none",
-              outline: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 8,
             }}
           >
-            Cadastre-se
-          </button>
-          <button
-            style={{
-              cursor: "pointer",
-              fontSize: "1em",
-              color: "#fff",
-              background: "#0854E0",
-              padding: "0.45em 1.2em",
-              outline: "none",
-              border: "none",
-              borderRadius: "1.5em",
-            }}
-          >
-            Login
-          </button>
-        </div>
+            <button
+              style={{
+                cursor: "pointer",
+                fontSize: "1em",
+                color: "#585858",
+                padding: "0.8em 0.6em",
+                background: "none",
+                border: "none",
+                outline: "none",
+              }}
+            >
+              Cadastre-se
+            </button>
+            <Link
+              href="/login"
+              style={{
+                cursor: "pointer",
+                fontSize: "1em",
+                color: "#fff",
+                background: "#0854E0",
+                padding: "0.45em 1.2em",
+                outline: "none",
+                border: "none",
+                borderRadius: "1.5em",
+                textDecoration: "none",
+              }}
+            >
+              Login
+            </Link>
+          </div>
+        ) : (
+          <div style={{ height: 50 }} />
+        )}
       </Container>
     </>
   );

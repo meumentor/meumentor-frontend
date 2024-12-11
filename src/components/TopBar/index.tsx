@@ -4,7 +4,11 @@ import { BoxMenu, Menu } from "./styles";
 import SideMenu from "./SideMenu";
 import { useState } from "react";
 
-export default function TopBar() {
+interface TopBarProps {
+  logged?: boolean
+}
+
+export default function TopBar(props: TopBarProps) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <BoxMenu>
@@ -19,7 +23,7 @@ export default function TopBar() {
         >
           <RxHamburgerMenu className="icon-menu" size="1.8em" />
         </button>
-        <SideMenu {...{ isOpen, setIsOpen }} />
+        <SideMenu {...{ isOpen, setIsOpen, ...props }} />
       </Menu>
     </BoxMenu>
   );
