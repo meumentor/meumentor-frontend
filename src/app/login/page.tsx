@@ -18,7 +18,7 @@ const providers = [
   },
 ];
 
-export const InputContainer = styled.div`
+const InputContainer = styled.div`
   position: relative;
   font-size: 1.25em;
 
@@ -61,7 +61,8 @@ export const InputContainer = styled.div`
   }
 `;
 
-export const formatPassword = (value: string) =>
+const formatDefault = (v: string) => v
+const formatPassword = (value: string) =>
   value?.replace(/([^a-zA-Z0-9@&*çÇ(),\.-])/g, "");
 
 export default function Login() {
@@ -73,7 +74,7 @@ export default function Login() {
     field: "user" | "password"
   ) => {
     if (info) setInfo("");
-    const format = field === "password" ? formatPassword : (v: string) => v;
+    const format = field === "password" ? formatPassword : formatDefault;
     const value = format(evt.target.value);
     setForm((prev) => ({ ...prev, [field]: value }));
   };
