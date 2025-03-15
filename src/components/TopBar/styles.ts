@@ -7,6 +7,7 @@ export const BoxMenu = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 10px;
 
   @media screen and (min-width: 949px) {
     .icon-menu {

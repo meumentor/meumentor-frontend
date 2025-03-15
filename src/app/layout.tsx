@@ -3,6 +3,26 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 // import RootStyleRegistry from "./emotion";
 
+// dark-theme
+// const theme = {
+//   body: '#292929',
+//   cardLevel1: '#3b3b3b',
+//   text1: '#d9d9d9',
+//   blue100: 'rgb(159 177 255)',
+//   bgInput: '#3f3f3f',
+//   borderColorInput: 'rgb(65 65 65)',
+// }
+
+
+// dart-theme homepage
+// const themeHome = {
+//   body: '#292929',
+//   labelAccordion: '#fcfcfc',
+//   borderAccordion: '#363636',
+//   backgroundCardAccordion: '#3a3a3a',
+//   backgroundDiverAccordion: '#3a3a3a', 
+// }
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",

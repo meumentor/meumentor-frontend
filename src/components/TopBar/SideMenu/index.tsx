@@ -141,7 +141,7 @@ export default function SideMenu(props: ISideMenu) {
               <Link
                 onClick={close}
                 style={{ textDecoration: "none", color: "inherit" }}
-                href="/#contato"
+                href="/contato"
               >
                 Contato
               </Link>
@@ -157,9 +157,11 @@ export default function SideMenu(props: ISideMenu) {
               gap: 8,
             }}
           >
-            <button
+            <Link
               onClick={close}
+              href='/cadastro'
               style={{
+                textDecoration:'none',
                 cursor: "pointer",
                 fontSize: "1em",
                 color: "#585858",
@@ -170,7 +172,7 @@ export default function SideMenu(props: ISideMenu) {
               }}
             >
               Cadastre-se
-            </button>
+            </Link>
             <Link
               onClick={close}
               href="/login"

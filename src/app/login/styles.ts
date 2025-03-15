@@ -2,9 +2,8 @@ import Card from "@/components/Card";
 import { container } from "@/lib/shared/styles";
 import styled from "@emotion/styled";
 
-export const MainLogin =styled.main`
+export const SectionLogin =styled.main`
  ${container}
-
   padding: 15px;
   height: 100dvh;
   position: relative;
@@ -46,5 +45,15 @@ export const CardLogin = styled(Card)`
     .side-form {
       flex-basis: 100%;
     }
+  }
+`
+
+export const RowLogin = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 450px) {
+    flex-direction: column;
+    justify-content: center;
   }
 `

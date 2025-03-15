@@ -1,11 +1,11 @@
 "use client";
 import TopBar from "@/components/TopBar";
 import Image from "next/image";
-import { BoxGridContact, ContentMentor, Hero, ImageContainer, Section } from "./styles";
+import { ContainerRow, ContentMentor, Hero, ImageContainer, Section } from "./styles";
 import Card from "@/components/Card";
 import { container } from "@/lib/shared/styles";
 import Footer from "@/components/Footer";
-import Input from "@/components/Input";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -40,8 +40,8 @@ export default function Home() {
                   Conheça
                 </button>
 
-                <a
-                  href="#contato"
+                <Link
+                  href="contato"
                   style={{
                     color: "#000",
                     textDecoration: "none",
@@ -54,7 +54,7 @@ export default function Home() {
                   }}
                 >
                   Fale conosco
-                </a>
+                </Link>
               </div>
             </div>
             <ImageContainer>
@@ -293,58 +293,83 @@ export default function Home() {
             </Card>
           </div>
         </Section>
-        <Section
-          id="contato"
-          style={{
-            minHeight: "calc(100dvh - 150px)",
-            padding: "15px 0px 100px 0px",
-          }}
-        >
-          <h2 style={{ margin: "25px 15px" }}>Contato</h2>
-          <form
-            style={{ margin: "0 15px" }}
-            action="/"
-            onSubmit={(evt) => evt.preventDefault()}
-          >
-            <BoxGridContact>
-              <Input label="Nome" container={{ id: "nome" }} />
-              <Input label="Telefone" container={{ id: "telefone" }} />
-              <Input label="E-mail" container={{ id: "email" }} />
-              <div id="message">
-                <label
-                  htmlFor="inpMessage"
-                  style={{ marginTop: 10, fontSize: "1.3em" }}
-                >
-                  Mensagem
-                </label>
-                <textarea
-                  id="inpMessage"
+
+        <Section id="depoimentos" style={{ padding: "15px 0px 100px 0px" }}>
+          <h2 style={{ margin: "25px 15px" }}>Depoimentos</h2>
+          <ContainerRow>
+            <Card className="p-4">
+              <p>
+                {`"`}O site meumentor.net foi um divisor de águas na minha
+                carreira profissional. Ao ter a mentoria com o mentor José
+                Albuquerque, ele me fez enxergar meu potencial, compartilhou
+                conhecimentos e vivências e me concedeu dicas valiosas. Sou
+                grato ao site e ao meu mentor, porque contribuíram bastante para
+                o meu sucesso profissional.{`"`}
+              </p>
+              <div className="d-flex gap-2">
+                <div
                   style={{
-                    resize: "none",
-                    width: "100%",
-                    border: "solid 1px #9c9c9c",
+                    position: "relative",
+                    width: 58,
+                    height: "100%",
+                    minHeight: 58,
+                    display: "flex",
+                    objectFit: "contain",
+                    borderRadius: '100%',
+                    overflow: 'hidden'
                   }}
-                  rows={10}
-                  cols={120}
-                ></textarea>
+                >
+                  <Image
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 100vw, 36vw"
+                    alt="Ícone de perfil"
+                    src="/img/perfil_mulher.png"
+                  />
+                </div>
+                <div>
+                  <p className="m-0" style={{ fontSize: '1.25em', fontWeight: 500 }}>Ingrid Vieira</p>
+                  <span style={{ color: '#4a4a4a'}}>Mentorada</span>
+                </div>
               </div>
-            </BoxGridContact>
-            <button
-              type="submit"
-              style={{
-                marginTop: 15,
-                fontSize: "1.2em",
-                borderRadius: "0.3em",
-                padding: "0.45em 1em",
-                background: "#3F92E0",
-                color: "#fff",
-                border: "none",
-                outline: "none"
-              }}
-            >
-              Enviar
-            </button>
-          </form>
+            </Card>
+            <Card className="p-4">
+              <p>
+                {`"`}Recomendo a todos que almejam, seja uma recolocação no
+                mercado do trabalho ou upgrade na carreira, o site
+                meumentor.net. São oferecidades mentorias de qualidade, sem
+                falsas promessas por parte do mentor. Essa experência me abriu a
+                perspectivas jamais imaginadas e superou minhas expectativas.
+                {`"`}
+              </p>
+              <div className="d-flex gap-2">
+                <div
+                  style={{
+                    position: "relative",
+                    width: 58,
+                    height: "100%",
+                    minHeight: 58,
+                    display: "flex",
+                    objectFit: "contain",
+                    borderRadius: '100%',
+                    overflow: 'hidden'
+                  }}
+                >
+                  <Image
+                    fill
+                    priority
+                    sizes="(max-width: 640px) 100vw, 36vw"
+                    alt="Ícone de perfil"
+                    src="/img/perfil_homem.png"
+                  />
+                </div>
+                <div>
+                  <p className="m-0" style={{ fontSize: '1.25em', fontWeight: 500 }}>Anderson dos Santos</p>
+                  <span style={{ color: '#4a4a4a'}}>Mentorado</span>
+                </div>
+              </div>
+            </Card>
+          </ContainerRow>
         </Section>
         <Footer />
       </main>

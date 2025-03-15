@@ -1,6 +1,7 @@
 // import { container } from "@/lib/shared/styles";
 import { container } from "@/lib/shared/styles";
 import styled from "@emotion/styled";
+import Link from "next/link";
 
 export const Section = styled.section`
   ${container}
@@ -79,5 +80,38 @@ export const BoxGridContact = styled.div`
     & > div {
       grid-column: auto / span 2
     }
+  }
+`
+
+export const MentorButton = styled(Link)`
+  margin-top: 5px;
+  background: transparent;
+  padding: 0.25em 0.4em;
+  outline: none;
+  border: none;
+  border-radius: 1.2em;
+  font-size: 1.4em;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+
+  /* &:hover {
+    border-color: var(--blue100);
+    background: var(--blue100);
+    color: #fff;
+  } */
+`
+
+export const ContainerRow = styled.div`
+  display: flex;
+  gap: 10px;
+  padding: 10px 15px;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    padding: 10px 5px;
   }
 `

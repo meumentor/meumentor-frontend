@@ -1,6 +1,7 @@
 :root {
   --blue100: #3F92E0;
   --blue200: #3e3be0;
+  --blue300:rgb(59, 117, 224);
   --gray700: #d7d7d7;
 
   --input-color: #000;

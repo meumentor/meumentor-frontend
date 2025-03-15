@@ -1,9 +1,9 @@
 "use client";
 import Input from "@/components/Input";
 import Image from "next/image";
-import { CardLogin, MainLogin } from "./styles";
+import { CardLogin, RowLogin, SectionLogin } from "./styles";
 import Logo from "@/components/Logo";
-import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -18,50 +18,7 @@ const providers = [
   },
 ];
 
-const InputContainer = styled.div`
-  position: relative;
-  font-size: 1.25em;
-
-  & input {
-    &:focus {
-      outline: 1px solid var(--input-outline);
-    }
-    &:not(:placeholder-shown) {
-      z-index: 0;
-    }
-    &:not(:placeholder-shown) ~ label,
-    .input input:focus ~ label {
-      top: -29%;
-      font-size: 0.74em;
-      cursor: default;
-      color: var(--input-label-color);
-      background: var(--input-label-background);
-      z-index: 1;
-    }
-
-    font-size: inherit;
-    padding: 0.35em 0.5em;
-    z-index: 1;
-    position: relative;
-    background: transparent;
-    border: 1px solid rgb(163, 163, 163);
-    border-radius: 0.3em;
-    color: var(--input-color);
-  }
-
-  & label {
-    position: absolute;
-    color: var(--input-label-disabled);
-    top: 7.3px;
-    left: 12.4px;
-    font-size: 0.95em;
-    transition: all 0.2s ease-in;
-    z-index: 0;
-    cursor: text;
-  }
-`;
-
-const formatDefault = (v: string) => v
+const formatDefault = (v: string) => v;
 const formatPassword = (value: string) =>
   value?.replace(/([^a-zA-Z0-9@&*çÇ(),\.-])/g, "");
 
@@ -80,7 +37,8 @@ export default function Login() {
   };
 
   return (
-    <MainLogin>
+    <main style={{ background: '#f2f2f3' }}>
+<SectionLogin>
       <CardLogin>
         <div className="side-image">
           <Image
@@ -89,7 +47,7 @@ export default function Login() {
             fill
           />
         </div>
-        <div className="side-form">
+        <div className="side-form" style={{ position: "relative" }}>
           <div style={{ maxWidth: "100%" }}>
             <div
               style={{
@@ -118,25 +76,25 @@ export default function Login() {
                   }}
                 />
               </div>
-              <InputContainer>
-                <input placeholder=" " autoFocus />
-                <label>Email</label>
-              </InputContainer>
-              <InputContainer>
-                <input
-                  name="senha"
-                  type="password"
-                  id="password"
-                  placeholder=" "
-                  value={form?.password ?? ""}
-                  onChange={(evt) => handleForm(evt, "password")}
-                  required
-                />
-                <label htmlFor="password">Senha</label>
-              </InputContainer>
-              {/* <Input label="Email" /> */}
-              {/* <Input label="Senha" /> */}
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Input
+                type="email"
+                label="Email"
+                layout="placeholder"
+                id="email"
+                value={form?.user ?? ""}
+                onChange={(evt) => handleForm(evt, "user")}
+                required
+              />
+              <Input
+                label="Senha"
+                layout="placeholder"
+                type="password"
+                id="password"
+                value={form?.password ?? ""}
+                onChange={(evt) => handleForm(evt, "password")}
+                required
+              />
+              <RowLogin>
                 <Input
                   label="Lembrar-me"
                   type="checkbox"
@@ -159,8 +117,7 @@ export default function Login() {
                 >
                   Esqueceu a senha?
                 </button>
-              </div>
-
+              </RowLogin>
               <Link
                 href="/perfil"
                 style={{
@@ -173,8 +130,8 @@ export default function Login() {
                   borderRadius: "0.6em",
 
                   // link
-                  textDecoration: 'none',
-                  textAlign: 'center'
+                  textDecoration: "none",
+                  textAlign: "center",
                 }}
               >
                 Login
@@ -202,9 +159,28 @@ export default function Login() {
                 </button>
               ))}
             </div>
+            <div
+              style={{ position: "absolute", bottom: 15, textAlign: "center" }}
+            >
+              <span style={{ color: "#4a4a4a", fontSize: "1.1em" }}>
+                Ainda não possui uma conta?{" "}
+              </span>
+              <Link
+                href="cadastro"
+                style={{
+                  textDecoration: "none",
+                  color: "var(--blue300)",
+                  fontSize: "1.1em",
+                  fontWeight: 500,
+                }}
+              >
+                Cadastre-se
+              </Link>
+            </div>
           </div>
         </div>
       </CardLogin>
-    </MainLogin>
+    </SectionLogin>
+    </main>
   );
 }
