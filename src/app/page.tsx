@@ -337,7 +337,7 @@ export default function Home() {
               <p>
                 {`"`}Recomendo a todos que almejam, seja uma recolocação no
                 mercado de trabalho ou upgrade na carreira, o site
-                meumentor.net. São oferecidades mentorias de qualidade, sem
+                meumentor.net. São oferecidas mentorias de qualidade, sem
                 falsas promessas por parte do mentor. Essa experiência me abriu a
                 perspectivas que jamais imaginei e superou minhas expectativas.
                 {`"`}
