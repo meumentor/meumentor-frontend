@@ -303,7 +303,7 @@ export default function Home() {
                 carreira profissional. Ao ter a mentoria com o mentor José
                 Albuquerque, ele me fez enxergar meu potencial, compartilhou
                 conhecimentos e vivências e me concedeu dicas valiosas. Sou
-                grato ao site e ao meu mentor, porque contribuíram bastante para
+                grata ao site e ao meu mentor, porque contribuíram bastante para
                 o meu sucesso profissional.{`"`}
               </p>
               <div className="d-flex gap-2">
@@ -336,10 +336,10 @@ export default function Home() {
             <Card className="p-4">
               <p>
                 {`"`}Recomendo a todos que almejam, seja uma recolocação no
-                mercado do trabalho ou upgrade na carreira, o site
+                mercado de trabalho ou upgrade na carreira, o site
                 meumentor.net. São oferecidades mentorias de qualidade, sem
-                falsas promessas por parte do mentor. Essa experência me abriu a
-                perspectivas jamais imaginadas e superou minhas expectativas.
+                falsas promessas por parte do mentor. Essa experiência me abriu a
+                perspectivas que jamais imaginei e superou minhas expectativas.
                 {`"`}
               </p>
               <div className="d-flex gap-2">
