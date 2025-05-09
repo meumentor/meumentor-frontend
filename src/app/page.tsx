@@ -1,7 +1,13 @@
 "use client";
 import TopBar from "@/components/TopBar";
 import Image from "next/image";
-import { ContainerRow, ContentMentor, Hero, ImageContainer, Section } from "./styles";
+import {
+  ContainerRow,
+  ContentMentor,
+  Hero,
+  ImageContainer,
+  Section,
+} from "./styles";
 import Card from "@/components/Card";
 import { container } from "@/lib/shared/styles";
 import Footer from "@/components/Footer";
@@ -31,7 +37,7 @@ export default function Home() {
                     fontSize: "1.1em",
                     color: "#fff",
                     borderRadius: "1.5em",
-                    background: "#3782F3",
+                    background: "var(--black200)",
                     outline: "none",
                     border: "none",
                     padding: "0.6em 1.2em",
@@ -292,6 +298,24 @@ export default function Home() {
               </ContentMentor>
             </Card>
           </div>
+          <div className="d-flex justify-content-center">
+            <Link
+              href="/cadastro/mentor"
+              style={{
+                marginTop: 10,
+                fontSize: "1.1em",
+                color: "#fff",
+                borderRadius: "1.5em",
+                background: "var(--black200)",
+                textDecoration: 'none',
+                outline: "none",
+                border: "none",
+                padding: "0.6em 1.2em",
+              }}
+            >
+              Venha ser Mentor
+            </Link>
+          </div>
         </Section>
 
         <Section id="depoimentos" style={{ padding: "15px 0px 100px 0px" }}>
@@ -315,8 +339,8 @@ export default function Home() {
                     minHeight: 58,
                     display: "flex",
                     objectFit: "contain",
-                    borderRadius: '100%',
-                    overflow: 'hidden'
+                    borderRadius: "100%",
+                    overflow: "hidden",
                   }}
                 >
                   <Image
@@ -328,8 +352,13 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <p className="m-0" style={{ fontSize: '1.25em', fontWeight: 500 }}>Ingrid Vieira</p>
-                  <span style={{ color: '#4a4a4a'}}>Mentorada</span>
+                  <p
+                    className="m-0"
+                    style={{ fontSize: "1.25em", fontWeight: 500 }}
+                  >
+                    Ingrid Vieira
+                  </p>
+                  <span style={{ color: "#4a4a4a" }}>Mentorada</span>
                 </div>
               </div>
             </Card>
@@ -337,8 +366,8 @@ export default function Home() {
               <p>
                 {`"`}Recomendo a todos que almejam, seja uma recolocação no
                 mercado de trabalho ou upgrade na carreira, o site
-                meumentor.net. São oferecidas mentorias de qualidade, sem
-                falsas promessas por parte do mentor. Essa experiência me abriu a
+                meumentor.net. São oferecidas mentorias de qualidade, sem falsas
+                promessas por parte do mentor. Essa experiência me abriu a
                 perspectivas que jamais imaginei e superou minhas expectativas.
                 {`"`}
               </p>
@@ -351,8 +380,8 @@ export default function Home() {
                     minHeight: 58,
                     display: "flex",
                     objectFit: "contain",
-                    borderRadius: '100%',
-                    overflow: 'hidden'
+                    borderRadius: "100%",
+                    overflow: "hidden",
                   }}
                 >
                   <Image
@@ -364,8 +393,13 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <p className="m-0" style={{ fontSize: '1.25em', fontWeight: 500 }}>Anderson dos Santos</p>
-                  <span style={{ color: '#4a4a4a'}}>Mentorado</span>
+                  <p
+                    className="m-0"
+                    style={{ fontSize: "1.25em", fontWeight: 500 }}
+                  >
+                    Anderson dos Santos
+                  </p>
+                  <span style={{ color: "#4a4a4a" }}>Mentorado</span>
                 </div>
               </div>
             </Card>

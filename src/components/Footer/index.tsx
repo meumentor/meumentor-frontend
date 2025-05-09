@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function Footer() {
-  return <div style={{ background: '#144379', color: '#fff', display: 'flex', flexDirection: 'column', padding: 20 }}>
+  return <div style={{ background: 'var(--black300)', color: '#fff', display: 'flex', flexDirection: 'column', padding: 20 }}>
     <div style={{ marginTop: 20, display: 'flex', gap: 10 }}>
       <div>
         <h6>Links</h6>

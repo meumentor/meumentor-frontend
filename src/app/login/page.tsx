@@ -37,150 +37,155 @@ export default function Login() {
   };
 
   return (
-    <main style={{ background: '#f2f2f3' }}>
-<SectionLogin>
-      <CardLogin>
-        <div className="side-image">
-          <Image
-            alt="Mentor e Mentorado"
-            src="/img/mentor_e_mentorado.jpg"
-            fill
-          />
-        </div>
-        <div className="side-form" style={{ position: "relative" }}>
-          <div style={{ maxWidth: "100%" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 15,
-              }}
-            >
-              <div>
-                <Logo
-                  responsive={false}
-                  size={75}
-                  components={{
-                    containerImage: {
-                      style: {
-                        borderRadius: "none",
-                        width: 75,
+    <main style={{ background: "#f2f2f3" }}>
+      <SectionLogin>
+        <CardLogin>
+          <div className="side-image">
+            <Image
+              alt="Mentor e Mentorado"
+              src="/img/mentor_e_mentorado.jpg"
+              fill
+            />
+          </div>
+          <div className="side-form" style={{ position: "relative" }}>
+            <div style={{ maxWidth: "100%" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: 15,
+                }}
+              >
+                <div>
+                  <Logo
+                    responsive={false}
+                    size={75}
+                    components={{
+                      containerImage: {
+                        style: {
+                          borderRadius: "none",
+                          width: 75,
+                        },
                       },
-                    },
-                    image: {
-                      src: "/icon/web-app-manifest-192x192.png",
-                      fill: true,
-                      alt: "Logo",
-                    },
-                  }}
-                />
-              </div>
-              <Input
-                type="email"
-                label="Email"
-                layout="placeholder"
-                id="email"
-                value={form?.user ?? ""}
-                onChange={(evt) => handleForm(evt, "user")}
-                required
-              />
-              <Input
-                label="Senha"
-                layout="placeholder"
-                type="password"
-                id="password"
-                value={form?.password ?? ""}
-                onChange={(evt) => handleForm(evt, "password")}
-                required
-              />
-              <RowLogin>
+                      image: {
+                        src: "/icon/web-app-manifest-192x192.png",
+                        fill: true,
+                        alt: "Logo",
+                      },
+                    }}
+                  />
+                </div>
                 <Input
-                  label="Lembrar-me"
-                  type="checkbox"
-                  container={{
-                    style: {
-                      display: "flex",
-                      gap: 8,
-                      flexDirection: "row-reverse",
-                    },
-                  }}
+                  autoFocus
+                  type="email"
+                  label="Email"
+                  layout="placeholder"
+                  id="email"
+                  value={form?.user ?? ""}
+                  onChange={(evt) => handleForm(evt, "user")}
+                  required
                 />
+                <Input
+                  label="Senha"
+                  layout="placeholder"
+                  type="password"
+                  id="password"
+                  value={form?.password ?? ""}
+                  onChange={(evt) => handleForm(evt, "password")}
+                  required
+                />
+                <RowLogin>
+                  <Input
+                    label="Lembrar-me"
+                    type="checkbox"
+                    container={{
+                      style: {
+                        display: "flex",
+                        gap: 8,
+                        flexDirection: "row-reverse",
+                      },
+                    }}
+                  />
 
-                <button
+                  <button
+                    style={{
+                      background: "transparent",
+                      color: "#4d4d4d",
+                      border: "none",
+                      outline: "none",
+                    }}
+                  >
+                    Esqueceu a senha?
+                  </button>
+                </RowLogin>
+                <Link
+                  href="/perfil"
                   style={{
-                    background: "transparent",
-                    color: "#0d29a3",
-                    border: "none",
+                    color: "#fff",
+                    background: "var(--black200)",
                     outline: "none",
+                    border: "none",
+                    padding: "0.4em 0",
+                    width: "100%",
+                    borderRadius: "0.6em",
+
+                    // link
+                    textDecoration: "none",
+                    textAlign: "center",
                   }}
                 >
-                  Esqueceu a senha?
-                </button>
-              </RowLogin>
-              <Link
-                href="/perfil"
+                  Login
+                </Link>
+                {providers.map((item, i) => (
+                  <button
+                    key={`button-${i}-${new Date()
+                      .getTime()
+                      .toString(16)
+                      .substring(0, 4)}`}
+                    style={{
+                      border: "solid 1px rgb(217, 217, 217)",
+                      borderRadius: "0.6em",
+                      padding: "0.25em 0.8em",
+                      display: "flex",
+                      gap: 8,
+                      background: "transparent",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "100%",
+                    }}
+                  >
+                    <Image alt="" width={28} height={28} src={item.img} />
+                    Login com o {item.name}
+                  </button>
+                ))}
+              </div>
+              <div
                 style={{
-                  color: "#fff",
-                  background: "var(--blue100)",
-                  outline: "none",
-                  border: "none",
-                  padding: "0.4em 0",
-                  width: "100%",
-                  borderRadius: "0.6em",
-
-                  // link
-                  textDecoration: "none",
+                  position: "absolute",
+                  bottom: 15,
                   textAlign: "center",
                 }}
               >
-                Login
-              </Link>
-              {providers.map((item, i) => (
-                <button
-                  key={`button-${i}-${new Date()
-                    .getTime()
-                    .toString(16)
-                    .substring(0, 4)}`}
+                <span style={{ color: "#4a4a4a", fontSize: "1.1em" }}>
+                  Ainda não possui uma conta?{" "}
+                </span>
+                <Link
+                  href="cadastro"
                   style={{
-                    border: "solid 1px rgb(217, 217, 217)",
-                    borderRadius: "0.6em",
-                    padding: "0.25em 0.8em",
-                    display: "flex",
-                    gap: 8,
-                    background: "transparent",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    width: "100%",
+                    textDecoration: "none",
+                    color: "var(--black200)",
+                    fontSize: "1.1em",
+                    fontWeight: 500,
                   }}
                 >
-                  <Image alt="" width={28} height={28} src={item.img} />
-                  Login com o {item.name}
-                </button>
-              ))}
-            </div>
-            <div
-              style={{ position: "absolute", bottom: 15, textAlign: "center" }}
-            >
-              <span style={{ color: "#4a4a4a", fontSize: "1.1em" }}>
-                Ainda não possui uma conta?{" "}
-              </span>
-              <Link
-                href="cadastro"
-                style={{
-                  textDecoration: "none",
-                  color: "var(--blue300)",
-                  fontSize: "1.1em",
-                  fontWeight: 500,
-                }}
-              >
-                Cadastre-se
-              </Link>
+                  Cadastre-se
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </CardLogin>
-    </SectionLogin>
+        </CardLogin>
+      </SectionLogin>
     </main>
   );
 }

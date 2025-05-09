@@ -55,7 +55,7 @@ export default function Contato() {
                   fontSize: "1.2em",
                   borderRadius: "0.3em",
                   padding: "0.45em 1em",
-                  background: "#3F92E0",
+                  background: "#333333",
                   color: "#fff",
                   border: "none",
                   outline: "none",

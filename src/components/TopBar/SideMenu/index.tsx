@@ -180,7 +180,7 @@ export default function SideMenu(props: ISideMenu) {
                 cursor: "pointer",
                 fontSize: "1em",
                 color: "#fff",
-                background: "#0854E0",
+                background: "var(--black200)",
                 padding: "0.45em 1.2em",
                 outline: "none",
                 border: "none",
